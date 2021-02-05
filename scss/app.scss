@@ -1,0 +1,727 @@
+@import "variables";
+@import "mixins";
+@import "../css/fonts/larsseit/stylesheet.css";
+
+
+*{
+    outline: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box !important;
+}
+
+html{
+    font-family: $mainFont;
+}
+
+body{
+    font-family: $mainFont;
+
+}
+
+li{
+    list-style-type: none;
+}
+
+header{
+
+    .container{
+        width: 100%;
+        height:100px;
+        margin-top: .5rem;
+        margin-bottom: 3rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: $primary;
+        display: block;
+        padding : 2rem;
+        font-family: $mainFont;
+        font-size: 1.2rem;
+
+        &:hover{
+            color: $primary2;
+        }
+    }
+
+    ul{
+        display: flex;
+        margin-right: 1.5rem;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+
+    .logo{
+        width: 150px;
+        height: 120px;
+        margin-left: .7rem;
+    }
+
+}
+
+.sentence{
+    text-align: center;
+    font-size: 1.9rem;
+    margin-top: 5rem;
+    margin-bottom: 7rem;
+    font-family: $sentenceFont;
+
+    .asterix{
+        color: $primary;
+    }
+}
+
+
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding-left: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .dual{
+        display: flex;
+        flex-direction: column;
+        flex-basis: calc(40% - 20px);
+        margin-left: 20px;
+
+    }
+
+    .video{
+        object-fit: cover;
+        background-color: $black;
+        opacity: 0.7;
+        transition: opacity 1s ease;
+        width: 100%;
+
+    }
+
+    .videos{
+        position: relative;
+        display: flex;
+        margin-bottom: 20px;
+
+        &:hover{
+            cursor: pointer; 
+
+            .overlay{
+                color: $white !important;
+            }
+        }
+    }
+
+    .video:hover{
+        opacity: 1;
+    }
+
+    .video1{
+        flex-basis: calc(60% - 20px);
+    }
+
+    .video4{
+        flex-basis: calc(40% - 20px);
+    }
+
+    .video5{
+        flex-basis: calc(60% - 20px);
+        margin-left: 20px;
+    }
+
+    .video6{
+        flex-basis: calc(70% - 20px);
+    }
+
+    .more-work{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-basis: calc(30% - 20px);
+        margin-left: 20px;
+        justify-content: center;
+        background-color: $gray;
+        text-align: center;
+        font-family: $mainFont;
+        transition: background-color 1.5s ease-in-out;
+        margin-bottom: 20px;
+    }
+
+    .more-work:hover{
+        background-color: $gray2;
+    }
+
+    .more-work a{
+        position: relative;
+        color: $black;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    .more-work a::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.25s ease-in-out 0s;
+    }
+
+    .more-work a:hover::before{
+        visibility: visible;
+        transform: scaleX(1);
+        cursor: pointer;
+    }
+
+    .overlay{
+        position: absolute;
+        color: $black;
+        left: 0.5rem;
+        top: 0.5rem;
+        font-size: 1.8rem;
+        z-index: 1;
+        transition: color 0.6s;
+        transition-timing-function: cubic-bezier(.53,.02,.45,.99);
+    }
+
+    .dark{
+        color: $white;
+    }
+
+    .smaller-text{
+        font-size: 1.2rem;
+    }
+}
+
+.notice{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.notice-text{
+    text-align: center;
+    color: $black;
+    font-size: 2.5rem;
+    letter-spacing: -.005em;
+    line-height: 1.4;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 3rem;
+}
+
+.more{
+    text-align: center;
+    margin: 3rem 0rem 6rem 0rem;
+}
+
+.more-about{
+   text-decoration: none;
+   position: relative;
+   color: $black;
+   background-color: $gray;
+   font-size: 1rem; 
+   transition: background-color 1.5s ease-in-out;
+   padding: .5rem 1rem;
+
+   &:hover{
+       background-color: $gray2;   
+   }
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.25s ease-in-out 0s;
+
+    }
+
+    &:hover::before{
+        visibility: visible;
+        transform: scaleX(1);
+        cursor: pointer;
+
+    }
+}
+
+@media (max-width:1164px) {
+    .info{
+        flex-direction: column;
+
+        .title{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .articles{
+            margin: auto;
+        }
+    } 
+
+    .sentence{
+        font-size: 1.6rem;
+    }
+
+    
+}
+
+@media (max-width:1302px){
+    .notice-text{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:1045px){
+    .notice-text{
+        font-size: 1.6rem;
+    }
+}
+
+.info{
+    display: flex;
+    flex: wrap;
+    margin: auto;
+    width: 80%;
+    margin-bottom: 9rem;
+
+    .title{
+        flex-basis: 60%;
+        justify-content: center;
+        font-size: 2.5rem;
+    }
+    
+    .articles{
+        display: flex;
+        flex-basis:60%;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    @media (max-width:1452px) {
+        .articles{
+            flex-basis: 80%;
+        }
+    }
+
+    @media (max-width:1275px) {
+        .articles{
+            flex-basis: 100%;
+        }
+    }
+
+    .article{
+        display: flex;   
+        
+    }
+    
+    .emoji{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 1.5rem .8rem;
+    }
+    
+    .news{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0 .7rem;
+        font-size: 1.1rem;
+    
+    }
+    
+    .read-more{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        
+        a{
+            position: relative;
+            text-decoration: none;
+            color:$black;
+            background-color: $gray;
+            padding: .7rem;
+            transition: background-color 1.5s ease-in-out;
+    
+            &:hover{
+                background-color: $gray2;  
+            }
+    
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                bottom: 0;
+                left: 0;
+                background-color: $black;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all 0.25s ease-in-out 0s;
+        
+            }
+    
+            &:hover::before{
+                visibility: visible;
+                transform: scaleX(1);
+                cursor: pointer;
+        
+            }
+        }
+    }
+}
+
+footer{
+    background-color: $gray;
+
+
+    .container{
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .something-new{
+            display: flex;
+            width: 80%;
+            margin: auto;
+            padding: 2rem 0 ;
+    
+            span{
+                color: $primary;
+                padding-right: .5rem;
+            }
+    
+            .contact{
+                display: flex;
+                justify-content: flex-start;
+                flex-basis: 50%;
+                font-size: 1.3rem;
+                
+            }
+
+            @media (max-width:1334px){
+                .contact{
+                    font-size: 0.8rem;
+                }
+            }
+    
+            .contact-us{
+                display: flex;
+                justify-content: flex-end;
+                flex-basis: 50%;
+                align-items: center;
+            }
+    
+            .contacts{
+                position: relative;
+                text-decoration: none;
+                color:$black;
+                padding: 1.5rem 2.2rem;
+                border-radius: 5px;
+                transition: background-color 1.5s ease-in-out;
+    
+                &:hover{
+                    background-color: $gray2;  
+                }
+        
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $black;
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transition: all 0.25s ease-in-out 0s;
+            
+                }
+        
+                &:hover::before{
+                    visibility: visible;
+                    transform: scaleX(1);
+                    cursor: pointer;
+            
+                }
+    
+    
+            }
+        }
+    
+        hr{
+            width: 83%;
+            height: 1.5px;
+            background-color: $black;
+            border-width: 0;
+            margin: auto;
+        }
+    
+        .company-info{
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            margin: auto;
+            padding-bottom: 4rem;
+    
+            .location{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                flex-basis: 40%;
+                margin-top: 3rem;
+    
+                h4{
+                    font-size: 1.7rem;
+                }
+    
+                a{
+                    text-decoration: none;
+                    color: $black;
+                    margin: .6rem  0;
+                    position: relative;
+                    transition: background-color 1.5s ease-in-out;
+                    padding-bottom: .5rem;
+            
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 50%;
+                        height: 3px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $black;
+                        visibility: hidden;
+                        transform: scaleX(0);
+                        transition: all 0.25s ease-in-out 0s;
+                
+                    }
+            
+                    &:hover::before{
+                        visibility: visible;
+                        transform: scaleX(1);
+                        cursor: pointer;
+                
+                    }
+                }
+    
+            }
+    
+            .footer-nav{
+                display: flex;
+                justify-content: space-between;
+                flex-basis: 60%;
+                margin-top: 3rem;
+                flex-direction: column;
+                align-items: flex-end;
+    
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    margin-right: 1rem;
+    
+                    a{
+                        padding-right: 1.02rem;
+                        text-decoration: none;
+                        color: $black;
+                        font-size: 1.1rem;
+                        position: relative;
+                        padding-bottom: .5rem;
+                
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            width: 80%;
+                            height: 3px;
+                            bottom: 0;
+                            left: 0;
+                            background-color: $black;
+                            visibility: hidden;
+                            transform: scaleX(0);
+                            transition: all 0.25s ease-in-out 0s;
+                    
+                        }
+                
+                        &:hover::before{
+                            visibility: visible;
+                            transform: scaleX(1);
+                            cursor: pointer;
+                    
+                        }    
+                    }
+                }
+    
+    
+                .join{
+                    display: flex;
+                    flex-direction: column;
+                    max-height: 180px;
+                    margin: 1rem;
+    
+                    .sub{
+                        p{
+                            margin-bottom: .5rem;
+                            font-size: 1.3rem;
+                            margin-right: .2rem;
+                        }
+                    }
+    
+                    .sub-join{
+                        display: flex;
+
+                        .email{
+                            padding: 1.2rem 2rem;
+                            margin-right: 1rem;
+                            border-radius: 10px;
+                            font-size: 1.1rem;
+                            width: 100%;
+                        }
+    
+                        .join-button{
+                            position: relative;
+                            text-decoration: none;
+                            color:$black;
+                            padding: 1.5rem 2.2rem;
+                            border-radius: 5px;
+                            transition: background-color 1.5s ease-in-out;
+    
+                            &:hover{
+                                background-color: $gray2;  
+                            }
+                    
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 3px;
+                                bottom: 0;
+                                left: 0;
+                                background-color: $black;
+                                visibility: hidden;
+                                transform: scaleX(0);
+                                transition: all 0.25s ease-in-out 0s;
+                        
+                            }
+                    
+                            &:hover::before{
+                                visibility: visible;
+                                transform: scaleX(1);
+                                cursor: pointer;
+                        
+                            }
+    
+                        }
+                    }
+    
+                }
+    
+                
+            }
+    
+            
+        }
+
+        .social-div{
+            margin: auto;
+            width: 80%;
+            margin-bottom: 7rem;
+            display: flex;
+            flex-direction: row;
+
+            .music-logo{
+                display: flex;
+                justify-content: flex-start;
+                flex-basis: 50%;
+
+                h6{
+                    font-size: 1rem;
+                }
+            }
+
+            .social-media{
+                display: flex;
+                justify-content: flex-end;
+                flex-basis: 47%;
+                margin-right: 4.5rem;
+
+                a{
+                    padding-right:1.2rem;
+                    text-decoration: none;
+                    color: $black;
+                    padding-bottom: .5rem;
+                    position: relative;
+                    transition: background-color 1.5s ease-in-out;
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 80%;
+                        height: 3px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $black;
+                        visibility: hidden;
+                        transform: scaleX(0);
+                        transition: all 0.25s ease-in-out 0s;
+                
+                    }
+            
+                    &:hover::before{
+                        visibility: visible;
+                        transform: scaleX(1);
+                        cursor: pointer;
+                
+                    }    
+                }
+            }
+
+            .privacy-terms{
+                display: flex;
+                justify-content: flex-end;
+                flex-basis: 3%;
+
+                a{
+                    text-decoration: none;
+                    color: $black;
+                   
+                }
+            }
+        }
+
+    
+    
+
+
+    }
+
+    
+    
+}
+
+@media(max-width:900px){
+    
+}
+
